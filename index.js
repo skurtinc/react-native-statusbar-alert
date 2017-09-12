@@ -122,6 +122,7 @@ class StatusBarAlert extends Component {
   }
 
   render() {
+    const { containerStyles } = this.props;
     const content = this.props.children ? this.props.children : (
        <Animated.Text
             style={[styles.text, {
@@ -143,7 +144,7 @@ class StatusBarAlert extends Component {
         }) : this.props.backgroundColor
       }]}>
         <TouchableOpacity
-          style={styles.touchableOpacity}
+          style={[styles.touchableOpacity, containerStyles]}
           onPress={this.props.onPress || null}
           activeOpacity={ACTIVE_OPACITY}
         >
